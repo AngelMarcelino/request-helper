@@ -1,0 +1,10 @@
+GIO             https://docs.gtk.org/gio/index.html
+GLIB            https://docs.gtk.org/glib/index.html
+GTK             https://docs.gtk.org/gtk3/index.html
+GOBJECT         https://docs.gtk.org/gobject/index.html
+
+
+
+EXAMPLES_SRC    https://gitlab.gnome.org/GNOME/gtk/-/tree/master/examples
+
+TUTORIAL        https://devdocs.io/gtk~3.20/ch01s04

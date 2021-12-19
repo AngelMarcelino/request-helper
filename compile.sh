@@ -1,0 +1,1 @@
+ gcc -o dist/postmanapp src/**.c `pkg-config --cflags --libs gtk+-3.0`
