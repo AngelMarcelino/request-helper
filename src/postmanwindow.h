@@ -6,7 +6,7 @@
 
 
 #define EXAMPLE_APP_WINDOW_TYPE (postman_app_window_get_type ())
-G_DECLARE_FINAL_TYPE (PostmanAppWindow, postman_app_window, EXAMPLE, APP_WINDOW, GtkApplicationWindow)
+G_DECLARE_FINAL_TYPE (PostmanAppWindow, postman_app_window, POSTMAN, APP_WINDOW, GtkApplicationWindow)
 
 
 PostmanAppWindow       *postman_app_window_new          (PostmanApp *app);

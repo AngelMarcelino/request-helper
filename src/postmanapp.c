@@ -9,25 +9,27 @@ struct _PostmanApp {
 
 G_DEFINE_TYPE(PostmanApp, postman_app, GTK_TYPE_APPLICATION);
 
-static void postman_app_init(PostmanApp *app) {
+static void postman_app_init(PostmanApp* app) {
 
 }
 
-static void postman_app_activate (GApplication *app) {
-    PostmanAppWindow *win;
-    win = postman_app_window_new(POSTMAN_APP (app));
-    gtk_window_present(GTK_WINDOW (win));
+static void postman_app_activate(GApplication* app) {
+    g_print("hola");
+    PostmanAppWindow* window;
+    window = postman_app_window_new(POSTMAN_APP(app));
+    gtk_widget_show_all(GTK_WIDGET(window));
 }
 
-static void postman_app_open(GApplication *app, GFile **files, int n_files, const char *hint) {
 
+static void postman_app_class_init(PostmanAppClass* class) {
+    G_APPLICATION_CLASS(class)->activate = postman_app_activate;
 }
 
-static void postman_app_class_init (PostmanAppClass *class) {
-    G_APPLICATION_CLASS (class)->activate = postman_app_activate;
-    G_APPLICATION_CLASS (class)->open = postman_app_open;
-}
-
-PostmanApp *postman_app_new(void) {
-    return g_object_new(postman_app_get_type(), "application-id", "org.marce.desktop.PostmanLike", "flags", G_APPLICATION_HANDLES_OPEN, NULL);
+PostmanApp* postman_app_new(void) {
+    if (g_application_id_is_valid("org.marce.desktop.postmanlike")) {
+        g_print("valid");
+    } else {
+        g_print("No valid");
+    }
+    return g_object_new(postman_app_get_type(), "application_id", "org.gtk.example", "flags", G_APPLICATION_FLAGS_NONE, NULL);
 }

@@ -1,1 +1,6 @@
-glib-compile-resources postmanapp.gresource.xml --target=../src/resources.c --generate-source
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/marce/desktop">
+    <file >resources/ui-templates/window.ui</file>
+  </gresource>
+</gresources>
