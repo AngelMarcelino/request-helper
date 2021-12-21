@@ -1,0 +1,19 @@
+<interface>
+  <template class="PostmanAppSideOptions" parent="GtkBox">
+    <property name="visible">True</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">10</property>
+    <child>
+      <object class="GtkButton" id="collections">
+          <property name="label">Collections</property>
+          <property name="visible">True</property>
+      </object>
+    </child>
+    <child>
+        <object class="GtkButton" id="environments">
+          <property name="label">Environments</property>
+          <property name="visible">True</property>
+      </object>
+      </child>
+  </template>
+</interface>

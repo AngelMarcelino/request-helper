@@ -5,7 +5,7 @@
 #include "postmanapp.h"
 
 
-#define EXAMPLE_APP_WINDOW_TYPE (postman_app_window_get_type ())
+#define POSTMAN_APP_WINDOW_TYPE (postman_app_window_get_type ())
 G_DECLARE_FINAL_TYPE (PostmanAppWindow, postman_app_window, POSTMAN, APP_WINDOW, GtkApplicationWindow)
 
 
