@@ -1,0 +1,13 @@
+<interface>
+  <template class="PostmanAppRequestTreeContainer" parent="GtkBox">
+    <property name="visible">True</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="label">Collections</property>
+        <attributes>
+          <attribute name="weight" value="PANGO_WEIGHT_BOLD"/>
+        </attributes>
+      </object>
+    </child>
+  </template>
+</interface>

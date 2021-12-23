@@ -3,6 +3,8 @@
 #include "postmanapp.h"
 #include "postmanwindow.h"
 #include "nav/side_options.h"
+#include "request_tree.h"
+#include "application-config.h"
 
 
 struct _PostmanAppWindow {
@@ -15,8 +17,11 @@ G_DEFINE_TYPE(PostmanAppWindow, postman_app_window, GTK_TYPE_APPLICATION_WINDOW)
 
 static void postman_app_window_init(PostmanAppWindow* win) {
     gtk_widget_init_template (GTK_WIDGET (win));
+    gtk_window_resize(GTK_WINDOW(win), POSTMAN_APP_SIZE_WIDTH, POSTMAN_APP_SIZE_HEIGHT);
     PostmanAppSideOptions *sideOptions = postman_app_side_options_new();
+    PostmanAppRequestTreeContainer *requestTreeContainer = postman_app_request_tree_container_new();
     gtk_container_add(GTK_CONTAINER(win->mainbox), GTK_WIDGET(sideOptions));
+    gtk_container_add(GTK_CONTAINER(win->mainbox), GTK_WIDGET(requestTreeContainer));
 }
 
 static void postman_app_window_class_init(PostmanAppWindowClass* class) {

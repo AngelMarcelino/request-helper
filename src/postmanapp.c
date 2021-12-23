@@ -14,7 +14,6 @@ static void postman_app_init(PostmanApp* app) {
 }
 
 static void postman_app_activate(GApplication* app) {
-    g_print("hola");
     PostmanAppWindow* window;
     window = postman_app_window_new(POSTMAN_APP(app));
     gtk_widget_show_all(GTK_WIDGET(window));
@@ -26,10 +25,5 @@ static void postman_app_class_init(PostmanAppClass* class) {
 }
 
 PostmanApp* postman_app_new(void) {
-    if (g_application_id_is_valid("org.marce.desktop.postmanlike")) {
-        g_print("valid");
-    } else {
-        g_print("No valid");
-    }
     return g_object_new(postman_app_get_type(), "application_id", "org.gtk.example", "flags", G_APPLICATION_FLAGS_NONE, NULL);
 }

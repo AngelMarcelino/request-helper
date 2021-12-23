@@ -1,3 +1,5 @@
 sh ./compile-resources.sh
+echo 'compile resources'
 sh ./compile.sh
-./dist/postmanapp 
+echo 'compile application'
+./dist/postmanapp

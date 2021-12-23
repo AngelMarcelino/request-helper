@@ -22,6 +22,6 @@ PostmanAppSideOptions* postman_app_side_options_new() {
         "orientation",
         GTK_ORIENTATION_VERTICAL,
         "spacing",
-        10);
+        10, NULL);
 }
 
