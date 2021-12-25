@@ -4,5 +4,6 @@
     <file >resources/ui-templates/window.ui</file>
     <file >resources/ui-templates/side_options.ui</file>
     <file >resources/ui-templates/request_tree_container.ui</file>
+    <file >resources/ui-templates/requests_container.ui</file>
   </gresource>
 </gresources>

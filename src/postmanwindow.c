@@ -5,6 +5,7 @@
 #include "nav/side_options.h"
 #include "request_tree.h"
 #include "application-config.h"
+#include "requests_containers.h"
 
 
 struct _PostmanAppWindow {
@@ -20,8 +21,10 @@ static void postman_app_window_init(PostmanAppWindow* win) {
     gtk_window_resize(GTK_WINDOW(win), POSTMAN_APP_SIZE_WIDTH, POSTMAN_APP_SIZE_HEIGHT);
     PostmanAppSideOptions *sideOptions = postman_app_side_options_new();
     PostmanAppRequestTreeContainer *requestTreeContainer = postman_app_request_tree_container_new();
+    PostmanAppRequestsContainer *requestsContainer = postman_app_requests_container_new();
     gtk_container_add(GTK_CONTAINER(win->mainbox), GTK_WIDGET(sideOptions));
     gtk_container_add(GTK_CONTAINER(win->mainbox), GTK_WIDGET(requestTreeContainer));
+    gtk_container_add(GTK_CONTAINER(win->mainbox), GTK_WIDGET(requestsContainer));
 }
 
 static void postman_app_window_class_init(PostmanAppWindowClass* class) {
