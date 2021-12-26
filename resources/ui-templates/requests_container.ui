@@ -2,6 +2,19 @@
   <template class="PostmanAppRequestsContainer" parent="GtkBox">
     <property name="visible">True</property>
     <child>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkComboBoxText">
+            <items>
+              <item translatable="yes" id="factory">Environment1</item>
+              <item translatable="yes" id="home">Environment2</item>
+              <item translatable="yes" id="subway">Environment3</item>
+            </items>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
       <object class="GtkNotebook">
         <property name="hexpand">True</property>
         <property name="vexpand">True</property>
@@ -12,12 +25,11 @@
                 <property name="label">Tab</property>
               </object>
             </child>
-
           </object>
         </child>
         <child type="tab">
           <object class="GtkLabel" id="notebook-tab">
-            <property name="label">Tab</property>
+            <property name="label">GetUsers</property>
           </object>
         </child>
         <child>
@@ -27,7 +39,7 @@
         </child>
         <child type="tab">
           <object class="GtkLabel" id="notebook-tab1">
-            <property name="label">Tab</property>
+            <property name="label">Login</property>
           </object>
         </child>
         <child>
@@ -37,7 +49,7 @@
         </child>
         <child type="tab">
           <object class="GtkLabel" id="notebook-tab2">
-            <property name="label">Tab</property>
+            <property name="label">UploadFile</property>
           </object>
         </child>
       </object>
