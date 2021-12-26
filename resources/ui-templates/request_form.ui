@@ -1,0 +1,22 @@
+<interface>
+  <template class="PostmanAppRequestForm" parent="GtkBox">
+    <property name="visible">True</property>
+    <child>
+        <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="orientation">horizontal</property>
+            <property name="spacing">10</property>
+            <child>
+                <object class="GtkButton">
+                    <property name="label">Get</property>
+                </object>
+            </child>
+            <child>
+                <object class="GtkEntry">
+                    
+                </object>
+            </child>
+        </object>
+    </child>
+  </template>
+</interface>

@@ -19,7 +19,7 @@
         <property name="hexpand">True</property>
         <property name="vexpand">True</property>
         <child>
-          <object class="GtkBox" id="notebook-content">
+          <object class="GtkBox" id="requestContent">
             <child>
               <object class="GtkLabel">
                 <property name="label">Tab</property>
@@ -28,28 +28,8 @@
           </object>
         </child>
         <child type="tab">
-          <object class="GtkLabel" id="notebook-tab">
+          <object class="GtkLabel" id="test-content-tab">
             <property name="label">GetUsers</property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkLabel" id="notebook-content1">
-            <property name="label">Content2</property>
-          </object>
-        </child>
-        <child type="tab">
-          <object class="GtkLabel" id="notebook-tab1">
-            <property name="label">Login</property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkLabel" id="notebook-content2">
-            <property name="label"></property>
-          </object>
-        </child>
-        <child type="tab">
-          <object class="GtkLabel" id="notebook-tab2">
-            <property name="label">UploadFile</property>
           </object>
         </child>
       </object>
