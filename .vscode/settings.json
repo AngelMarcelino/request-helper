@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "gtk.h": "c",
-        "postmanapp.h": "c"
+        "postmanapp.h": "c",
+        "request-configuration.h": "c",
+        "request-panel.h": "c"
     }
 }

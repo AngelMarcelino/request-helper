@@ -1,0 +1,5 @@
+<interface>
+    <template class="PostmanAppRequestPanel" parent="GtkBox">
+        <property name="margin">6</property>
+    </template>
+</interface>

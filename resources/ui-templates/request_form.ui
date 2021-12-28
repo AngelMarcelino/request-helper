@@ -3,7 +3,6 @@
         <property name="visible">True</property>
         <child>
             <object class="GtkGrid">
-                <property name="margin">6</property>
                 <property name="row-spacing">12</property>
                 <property name="column-spacing">6</property>
                 <property name="baseline-row">12</property>

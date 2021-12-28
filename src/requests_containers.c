@@ -1,7 +1,7 @@
 #include <gtk/gtk.h>
 
 #include "requests_containers.h"
-#include "request_form.h"
+#include "request_panel.h"
 
 struct _PostmanAppRequestsContainer {
     GtkBox parent;
@@ -17,8 +17,8 @@ G_DEFINE_TYPE_WITH_PRIVATE(PostmanAppRequestsContainer, postman_app_requests_con
 static void postman_app_requests_container_init(PostmanAppRequestsContainer* requestsContainer) {
     gtk_widget_init_template(GTK_WIDGET(requestsContainer));
     PostmanAppRequestsContainerPrivate *priv = postman_app_requests_container_get_instance_private(requestsContainer);
-    PostmanAppRequestForm *requestForm = postman_app_request_form_new();
-    gtk_container_add(GTK_CONTAINER(priv->requestContent), GTK_WIDGET(requestForm));
+    PostmanAppRequestPanel *requestPanel = postman_app_request_panel_new();
+    gtk_container_add(GTK_CONTAINER(priv->requestContent), GTK_WIDGET(requestPanel));
 }
 
 static void postman_app_requests_container_class_init(PostmanAppRequestsContainerClass* class) {

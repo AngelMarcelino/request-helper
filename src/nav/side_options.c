@@ -13,7 +13,10 @@ static void postman_app_side_options_init(PostmanAppSideOptions* sideOptions) {
 }
 
 static void postman_app_side_options_class_init(PostmanAppSideOptionsClass* class) {
-    gtk_widget_class_set_template_from_resource(GTK_WIDGET_CLASS(class), "/org/marce/desktop/resources/ui-templates/side_options.ui");
+    gtk_widget_class_set_template_from_resource(
+        GTK_WIDGET_CLASS(class),
+        "/org/marce/desktop/resources/ui-templates/side_options.ui"
+    );
 }
 
 PostmanAppSideOptions* postman_app_side_options_new() {

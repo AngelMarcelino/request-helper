@@ -1,0 +1,76 @@
+<interface>
+    <template class="PostmanAppRequestConfiguration" parent="GtkNotebook">
+        <property name="hexpand">True</property>
+        <property name="visible">True</property>
+        <property name="vexpand">True</property>
+        <child>
+            <object class="GtkBox">
+                <child>
+                    <object class="GtkLabel">
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child type="tab">
+            <object class="GtkLabel">
+                <property name="label">Params</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkBox">
+                <child>
+                    <object class="GtkLabel">
+                        <property name="label">Tab</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child type="tab">
+            <object class="GtkLabel">
+                <property name="label">Authorization</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkBox">
+                <child>
+                    <object class="GtkLabel">
+                        <property name="label">Tab</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child type="tab">
+            <object class="GtkLabel">
+                <property name="label">Headers</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkBox">
+                <child>
+                    <object class="GtkLabel">
+                        <property name="label">Tab</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child type="tab">
+            <object class="GtkLabel">
+                <property name="label">Body</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkBox">
+                <child>
+                    <object class="GtkLabel">
+                        <property name="label">Tab</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+        <child type="tab">
+            <object class="GtkLabel">
+                <property name="label">Actions</property>
+            </object>
+        </child>
+    </template>
+</interface>
