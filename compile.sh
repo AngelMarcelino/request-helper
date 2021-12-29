@@ -1,1 +1,1 @@
- gcc -o dist/postmanapp src/*/*.c src/*.c `pkg-config --cflags --libs gtk+-3.0`
+ gcc -o dist/postmanapp src/*/*.c src/*.c `pkg-config --cflags --libs gtk+-3.0` `pkg-config --cflags --libs libcurl`

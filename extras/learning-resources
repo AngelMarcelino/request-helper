@@ -8,3 +8,7 @@ GOBJECT         https://docs.gtk.org/gobject/index.html
 EXAMPLES_SRC    https://gitlab.gnome.org/GNOME/gtk/-/tree/master/examples
 
 TUTORIAL        https://devdocs.io/gtk~3.20/ch01s04
+
+
+CURL_DOCUMENTATION  https://everything.curl.dev/libcurl-http/requests
+                    https://curl.se/libcurl/c/

@@ -8,7 +8,7 @@
                 <property name="baseline-row">12</property>
 
                 <child>
-                    <object class="GtkComboBoxText">
+                    <object class="GtkComboBoxText" id="methodSelector">
                         <items>
                             <item translatable="yes" id="factory">GET</item>
                             <item translatable="yes" id="home">POST</item>
@@ -23,7 +23,7 @@
                     </packing>
                 </child>
                 <child>
-                    <object class="GtkEntry">
+                    <object class="GtkEntry" id="endpoint">
                         <property name="hexpand">True</property>
                     </object>
                     <packing>
@@ -33,7 +33,7 @@
                     </packing>
                 </child>
                 <child>
-                    <object class="GtkButton">
+                    <object class="GtkButton" id="sendRequest">
                         <property name="label">Send request</property>
                     </object>
                     <packing>

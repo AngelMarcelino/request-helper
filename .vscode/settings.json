@@ -3,6 +3,7 @@
         "gtk.h": "c",
         "postmanapp.h": "c",
         "request-configuration.h": "c",
-        "request-panel.h": "c"
+        "request-panel.h": "c",
+        "typeinfo": "c"
     }
 }
