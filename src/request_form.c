@@ -13,31 +13,35 @@ struct _PostmanAppRequestFormPrivate {
     GtkButton* sendRequest;
     GtkEntry* endpoint;
     GtkComboBoxText* methodSelector;
+    RequestSentCallback onRequestSent;
+    gpointer onRequestSentData;
 };
 
 
 G_DEFINE_TYPE_WITH_PRIVATE(PostmanAppRequestForm, postman_app_request_form, GTK_TYPE_BOX)
 
 static void send_request_clicked(GtkWidget* widget, gpointer data) {
+    RequestConfiguration *requestConfiguration = malloc(sizeof(RequestConfiguration));
     PostmanAppRequestFormPrivate* priv = postman_app_request_form_get_instance_private(
         POSTMAN_APP_REQUEST_FORM(data)
     );
     const gchar* uri = gtk_entry_get_text(GTK_ENTRY(priv->endpoint));
     const gchar* method_raw = gtk_combo_box_text_get_active_text(GTK_COMBO_BOX_TEXT(priv->methodSelector));
-    const GString* method = g_string_new(method_raw);
-    if (g_string_equal(method, g_string_new("GET"))) {
-        GString* result = postman_app_get(uri);
-    }
-    else if (g_string_equal(method, g_string_new("POST"))) {
-        GString* result = postman_app_post(uri, "{\"hola\": \"mundo\"}");
-    }
+    requestConfiguration->method = method_raw;
+    requestConfiguration-> uri = uri;
+    priv->onRequestSent(requestConfiguration, data);
 }
 
 
 static void postman_app_request_form_init(PostmanAppRequestForm* requestForm) {
     gtk_widget_init_template(GTK_WIDGET(requestForm));
     PostmanAppRequestFormPrivate* priv = postman_app_request_form_get_instance_private(requestForm);
-    g_signal_connect(G_OBJECT(priv->sendRequest), "clicked", G_CALLBACK(send_request_clicked), requestForm);
+    g_signal_connect(
+        G_OBJECT(priv->sendRequest),
+        "clicked",
+        G_CALLBACK(send_request_clicked),
+        requestForm
+    );
 }
 
 static void postman_app_request_form_class_init(PostmanAppRequestFormClass* class) {
@@ -61,6 +65,11 @@ static void postman_app_request_form_class_init(PostmanAppRequestFormClass* clas
         methodSelector
     );
 
+}
+
+void postman_app_request_form_on_request_sent(PostmanAppRequestForm* requestForm, RequestSentCallback callback, gpointer data) {
+    PostmanAppRequestFormPrivate *priv = postman_app_request_form_get_instance_private(requestForm);
+    priv->onRequestSent = callback;
 }
 
 PostmanAppRequestForm* postman_app_request_form_new() {

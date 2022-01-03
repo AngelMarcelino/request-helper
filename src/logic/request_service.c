@@ -102,4 +102,20 @@ GString* postman_app_post(gchar* uri, gchar* body) {
     return resultData;
 }
 
+static headers_list_foreach(gpointer element, gpointer data) {
+    
+}
+
+static struct curl_slist *make_curl_style_headers(GList *headers) {
+    struct curl_slist *list = NULL;
+    g_list_foreach(headers, headers_list_foreach, &list);
+}
+
+GString *postman_app_make_request(RequestConfiguration *requestConfiguration) {
+    GString *resultData = g_string_new("");
+    ReadData *readData = initialize_read_data(requestConfiguration->body);
+    CURL *curl;
+    CURLcode res;
+    struct curl_slist *list = make_curl_style_headers(requestConfiguration->headers);
+}
 

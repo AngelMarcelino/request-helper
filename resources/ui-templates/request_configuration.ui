@@ -4,10 +4,27 @@
         <property name="visible">True</property>
         <property name="vexpand">True</property>
         <child>
-            <object class="GtkBox">
+            <object class="GtkBox" id="bodyContainer">
+                <property name="visible">True</property>
                 <child>
-                    <object class="GtkLabel">
+                    <object class="GtkTextView" id="bodyTextView">
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">True</property>
+                        <property name="editable">True</property>
                     </object>
+                </child>
+            </object>
+        </child>
+        <child type="tab">
+            <object class="GtkLabel">
+                <property name="label">Body</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkBox">
+                <property name="visible">True</property>
+                <child>
+                    <object class="GtkLabel">Holi</object>
                 </child>
             </object>
         </child>
@@ -31,12 +48,9 @@
             </object>
         </child>
         <child>
-            <object class="GtkBox">
-                <child>
-                    <object class="GtkLabel">
-                        <property name="label">Tab</property>
-                    </object>
-                </child>
+            <object class="GtkBox" id="headersContainer">
+                <property name="orientation">vertical</property>
+                <property name="visible">True</property>
             </object>
         </child>
         <child type="tab">
@@ -44,20 +58,7 @@
                 <property name="label">Headers</property>
             </object>
         </child>
-        <child>
-            <object class="GtkBox">
-                <child>
-                    <object class="GtkLabel">
-                        <property name="label">Tab</property>
-                    </object>
-                </child>
-            </object>
-        </child>
-        <child type="tab">
-            <object class="GtkLabel">
-                <property name="label">Body</property>
-            </object>
-        </child>
+
         <child>
             <object class="GtkBox">
                 <child>
