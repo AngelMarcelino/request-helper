@@ -29,7 +29,7 @@ static PostmanAppHeadersConfiguratorRow* construct_row(gchar* headerName, gchar*
     return row;
 }
 
-static void addHeaderRow(PostmanAppHeadersConfigurator* headersConfigurator, gchar* headerName, gchar* headerValue) {
+static void add_header_row(PostmanAppHeadersConfigurator* headersConfigurator, gchar* headerName, gchar* headerValue) {
     PostmanAppHeadersConfiguratorRow* row = construct_row(headerName, headerValue);
     gtk_widget_set_visible(row, TRUE);
     gtk_container_add(GTK_CONTAINER(headersConfigurator), GTK_WIDGET(row));
@@ -38,7 +38,7 @@ static void addHeaderRow(PostmanAppHeadersConfigurator* headersConfigurator, gch
 
 static void on_add_header_clicked(GtkWidget* button, gpointer data) {
     PostmanAppHeadersConfigurator* headerConfigurator = (PostmanAppHeadersConfigurator*)data;
-    addHeaderRow(headerConfigurator, "", "");
+    add_header_row(headerConfigurator, "", "");
     g_print("adios\n");
 }
 
@@ -48,7 +48,7 @@ static void build_interface(PostmanAppHeadersConfigurator* headersConfigurator) 
         postman_app_headers_configurator_get_instance_private(headersConfigurator);
     priv->addHeaderButton = postman_app_construct_button("Add");
     gtk_container_add(GTK_BOX(headersConfigurator), GTK_WIDGET(priv->addHeaderButton));
-    addHeaderRow(headersConfigurator, "Content-Type", "application/json");
+    add_header_row(headersConfigurator, "Content-Type", "application/json");
 }
 
 static void postman_app_headers_configurator_init(PostmanAppHeadersConfigurator* headersConfigurator) {
